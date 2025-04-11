@@ -172,7 +172,7 @@ Endi oxirgi bosqichga tayyorgarlik ko'rish uchun dokerdan biroz tanaffus olish l
 
 **== Topshiriq ==**
 
-##### **C** va **FastCgi**-da `Hello World!` yozuvi bilan oddiy sahifani qaytaradigan mini-server yozing.
+##### **C** va **FastCgi**-da `Hello, World!` yozuvi bilan oddiy sahifani qaytaradigan mini-server yozing.
 ##### 8080 portida *spawn-fcgi* orqali yozilgan mini-serverni ishga tushiring.
 ##### 81-portdan *127.0.0.1:8080* ga barcha so'rovlarni proksilaydigan o'zingizning *nginx.conf* yozing.
 ##### Brauzerda *localhost:81* bo’yicha siz tomoningizdan yozilgan sahifa berilayotganligini tekshiring.
