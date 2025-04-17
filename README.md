@@ -150,8 +150,8 @@ Docker image and container are ready. Now we can look into **nginx** configurati
 ##### Check that *localhost:80/status* returns the **nginx** server status page.
 ##### Export the container to a *container.tar* file with the *export* command.
 ##### Stop the container.
-##### Delete the image with `docker rmi [image_id|repository]`without removing the container first.
 ##### Delete stopped container.
+##### Delete the image with `docker rmi [image_id|repository]`without removing the container first.
 ##### Import the container back using the *import*command.
 ##### Run the imported container.
 ##### Check that *localhost:80/status* returns the **nginx** server status page.
@@ -171,6 +171,7 @@ It's time to take a little break from the docker to prepare for the last stage. 
 ##### Write a mini server in **C** and **FastCgi** that will return a simple page saying `Hello, World!`.
 ##### Run the written mini server via *spawn-fcgi* on port 8080.
 ##### Write your own *nginx.conf* that will proxy all requests from port 81 to *127.0.0.1:8080*.
+##### Run **nginx** locally with the written configuration.
 ##### Check that browser on *localhost:81* returns the page you wrote.
 ##### Put the *nginx.conf* file under *./nginx/nginx.conf* (you will need this later).
 
@@ -193,7 +194,7 @@ _**nginx** can be installed inside the docker itself, or you can use a ready-mad
 ##### Run the built docker image by mapping port 81 to 80 on the local machine and mapping the *./nginx* folder inside the container to the address where the **nginx** configuration files are located (see [Part 2](#part-2-operations-with-container)).
 ##### Check that the page of the written mini server is available on localhost:80.
 ##### Add proxying of */status* page in *./nginx/nginx.conf* to return the **nginx** server status.
-##### Restart docker image.
+##### Rebuild docker image.
 *If everything is done correctly, after saving the file and restarting the container, the configuration file inside the docker image should update itself without any extra steps
 ##### Check that *localhost:80/status* now returns a page with **nginx** status.
 

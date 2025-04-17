@@ -155,8 +155,8 @@ Doker obraz va konteyner tayyor. Endi nginx konfiguratsiyasiga kirib, sahifa hol
 ##### **nginx** server holati sahifasi *localhost:80/status* manzili bo’yicha berilishini tekshiring.
 ##### *export* buyrug'i yordamida konteynerni *container.tar* fayliga eksport qiling.
 ##### Konteynerni to'xtating.
-##### Avval konteynerlarni o'chirmasdan, obrazni `docker rmi [image_id|repository]` orqali o'chirib tashlang.
 ##### To'xtatilgan konteynerni o’chiring.
+##### Avval konteynerlarni o'chirmasdan, obrazni `docker rmi [image_id|repository]` orqali o'chirib tashlang.
 ##### *import* buyrug'i yordamida konteynerni qayta import qiling.
 ##### Import qilingan konteynerni ishga tushiring.
 ##### **nginx** server holati sahifasi *localhost:80/status* manzili bo’yicha berilishini tekshiring.
@@ -175,6 +175,7 @@ Endi oxirgi bosqichga tayyorgarlik ko'rish uchun dokerdan biroz tanaffus olish l
 ##### **C** va **FastCgi**-da `Hello, World!` yozuvi bilan oddiy sahifani qaytaradigan mini-server yozing.
 ##### 8080 portida *spawn-fcgi* orqali yozilgan mini-serverni ishga tushiring.
 ##### 81-portdan *127.0.0.1:8080* ga barcha so'rovlarni proksilaydigan o'zingizning *nginx.conf* yozing.
+##### **nginx** ni yozma konfiguratsiya bilan mahalliy sifatida ishga tushiring.
 ##### Brauzerda *localhost:81* bo’yicha siz tomoningizdan yozilgan sahifa berilayotganligini tekshiring.
 ##### *nginx.conf* faylini *./nginx/nginx.conf* yo'li bo’ylab joylashtiring (bu keyinroq kerak bo'ladi).
 
@@ -198,7 +199,7 @@ _doker ichida **nginx**-ni mustaqil ravishda o'rnatish mumkin yoki **nginx** ga 
 ##### Mahalliy mashinada yig'ilgan 81 port mappingli doker obrazni 80 ga va **nginx** konfiguratsiya fayllari joylashgan manzil bo’yicha konteyner ichidagi *./nginx* papkasidagi mappingli dokerni ishga tushiring ([2-qismga](#part-2-konteyner-bilan-operatsiyalar) qarang).
 ##### Yozilgan mini server sahifasi localhost:80 bo’yicha mavjudligini tekshiring.
 ##### *./nginx/nginx.conf* ga **nginx** serverining holatini ko'rsatish uchun ishlatilishi kerak bo'lgan */status* sahifasini proksilashni yozib to’ldiring.
-##### Doker obrazni qayta ishga tushiring.
+##### docker tasvirini qayta tiklash.
 *Agar hammasi to'g'ri bajarilgan bo'lsa, faylni saqlash va konteynerni qayta ishga tushirgandan so'ng, doker obraz ichidagi konfiguratsiya fayli ortiqcha harakatlarsiz o'z-o'zidan yangilanishi kerak.*
 ##### **nginx** holatiga ega sahifa endi *localhost:80/status* bo’yicha berilayotganligini tekshiring
 
