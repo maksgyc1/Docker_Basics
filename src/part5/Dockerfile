@@ -5,21 +5,18 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     libfcgi-dev \
     spawn-fcgi \
-    nginx \
     procps \
+    iproute2 \
     && rm -rf /var/lib/apt/lists/*
 
 RUN adduser --disabled-password --gecos "" appuser
 
-COPY hello.c /hello.c
-COPY nginx /etc/nginx
+WORKDIR /app
 
-RUN gcc -o /fastcgi-server /hello.c -lfcgi
+COPY hello.c /app/hello.c
 
-COPY nginx/nginx.conf /etc/nginx/nginx.conf
+RUN gcc -o /app/fastcgi-server /app/hello.c -lfcgi
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-CMD ["/entrypoint.sh"]
+RUN chown appuser:appuser /app/fastcgi-server
 
-USER appuser
+CMD ["bash", "-c", "spawn-fcgi -n -p 81 /app/fastcgi-server"]
